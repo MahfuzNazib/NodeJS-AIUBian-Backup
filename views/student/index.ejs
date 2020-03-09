@@ -1,0 +1,246 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!--===========================Bootstrap 4 CDN Link=======================================-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!--Google Fonts Link-->
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script type="text/javascript" src="/script/student.js"></script>
+
+    <title>Student Home</title>
+
+    <style>
+
+        body{
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        
+        <form  method="POST" action="/facultyHome/searchProfile" class="form-inline my-2 my-lg-0">
+            <input type="text" name="searchEmail" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
+            <input type="submit" name="submit" class="btn btn-outline-success my-2 my-sm-0" value="Search">
+        </form>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="navbar-brand" href="#">  <%= userInfo.name %> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    
+                  <a class="nav-link" href="/studentHome">
+                    <button class="btn btn-light">
+                        Home
+                    </button>
+                    <span class="sr-only">(current)</span></a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/studentHome/timeLine">
+                        <button type="button" class="btn btn-light">
+                           Time Line
+                        </button>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/studentHome/chat">
+                        <button type="button" class="btn btn-light">
+                            Messages <span class="badge badge-primary">4</span>
+                        </button>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;-->
+                        <% if(notifiInfo != null) {%>
+                        <div id="username" hidden><%=notifiInfo[0].receiver%></div>
+                        <%}%>
+                        <button type="button" id="notification" onclick="showNotifi()"   class="btn btn-light">
+                            Notification <span id="notifiNum" class="badge badge-primary">
+
+                                <% if(notifiInfo != null) {%>
+                                    <%= notifiInfo.length %>
+                                <%}%>
+                                
+                                    
+
+                                </span>
+                        </button>
+
+                        <!--
+                        <button type="button" class="btn btn-light">
+                            Notification <span class="badge badge-primary">15</span>
+                        </button>
+                    -->
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/studentHome/settings">
+                        <button class="btn btn-light">
+                            Settings
+                        </button>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">
+                        <button class="btn btn-danger">
+                            Logout
+                        </button>
+                    </a>
+                </li>
+
+            </div>
+          </nav>
+
+          <br><br><br>
+        <div class="row">
+
+            
+            <!--Right Sides Buttons-->
+            <div class="col-sm-3 container bg card">
+                <br>
+                <!--Profile information-->
+                <center>
+                    <img src="/<%= userInfo.profilePicture%>" class="rounded-circle" width="70px" height="70px"><br>
+                </center>
+                <hr>
+                <center>
+                    <a href="/studentHome/studentProfile"><button class="btn btn-info">Profile</button></a> 
+                    <a href="/studentHome/editProfile"><button class="btn btn-info">Edit-Profile</button></a>
+                </center>
+                
+                <hr>
+                
+                <form method="POST" style="text-align: center;">
+                <!-- <button type="submit" class="btn btn-light" formaction="/facultyHome/facultyPost">Faculty Post</button>
+                <button type="submit" class="btn btn-light" formaction="/facultyHome/almuniPost">Alumni Post</button> 
+                <button type="submit" class="btn btn-light" formaction="/facultyHome/studentPost">Student Post</button>
+                <button type="submit" class="btn btn-light" formaction="/facultyHome/jobOrInternPost">Job/Internship</button> -->
+
+                <button type="submit" class="btn btn-light" formaction="/studentHome/facultyPost">Faculty Post</button>
+                <button type="submit" class="btn btn-light" formaction="/studentHome/almuniPost">Alumni Post</button> <!--********-->
+                <button type="submit" class="btn btn-light" formaction="/studentHome/studentPost">Student Post</button>
+                <button type="submit" class="btn btn-light" formaction="/studentHome/jobOrInternPost">Job/Internship</button>
+                </form>
+                <br>
+                <hr>
+            </div>
+
+            <!--Middle Sides////Posts-->
+            <div class="col-sm-6 container ">
+                <% for(var i=0; i < data.length; i++){ %>
+                    <div class="container bg card">
+                        <br>
+                        <table border="0">
+                            <!--Name,Status Row-->
+                            <tr>
+                                <td width="2%"><img src="/<%= data[i].profilePicture%>" class="rounded-circle" height="40px" width="40px"></td>
+                                <td>
+                                    <div hidden><%= data[i].UserId%></div>
+                                    <div id="username<%=i%>" hidden><%= data[i].username %></div>
+                                    <text    class="name">
+                                         <!-- <%= data[i].name %>  -->
+                                         <a href="/studentHome/viewProfile/<%= data[i].UserId %>"> <%= data[i].name %> </a> 
+                                    </text>
+                                    <span class="badge badge-pill badge-secondary"><%= data[i].type%></span> -- Sharing a Post On
+                                </td>
+                            </tr>
+                            <!--Date Time Row-->
+                            <tr>
+                                <td></td>
+                                <td> <%= data[i].postDate %> </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <hr>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <p class="postTextDisplay">
+                                        <%= data[i].text %>
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <!--Image/Video/Text Row-->
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <img src="/<%= data[i].image %>" height="300px" width="90%">
+                                </td>
+                            </tr>
+                        </table>
+                        <table border="0">
+                            <tr>
+                                <td width="2%"></td>
+                                <td>
+                                    <center>
+                                        <!--
+                                        <button  class="btn btn-light">
+                                            Like <span class="badge badge-primary"><%=data[i].postLike %></span>
+                                        </button>
+                                    -->
+
+                                    <button type="button" id="likebtn<%=i%>" onclick="like(<%= data[i].postId %>, <%= i %>)" class="btn btn-light" >
+                                        Like <span id="likeCount<%=i%>" class="badge badge-primary"><%= data[i].postLike %></span>
+                                    </button>
+
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <button class="btn btn-light">
+                                            Comments <span class="badge badge-primary">15</span>
+                                        </button>
+                                    </center>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <br>
+                    </div>
+                    <br><br>
+                <% } %>
+
+                <br><br>
+            </div>
+
+            <div class="col-sm-3 container">
+                <br>
+                
+            </div>
+        </div>
+</body>
+</html>
