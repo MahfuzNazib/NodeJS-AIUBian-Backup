@@ -1,0 +1,410 @@
+.table-header
+{
+    background-color: rgb(6, 52, 73);
+    color: white;
+    height: 35px;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    size: 18px;
+    text-align: center;
+}
+
+.btn-Block
+{
+    height: 35px;
+    width: 80px;
+    background-color: rgb(18, 75, 40);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    border: none;
+    align-content: center;
+}
+
+.btn-Block:hover
+{
+    border-radius: 10px;
+    background-color: rgb(93, 10, 10);
+}
+
+.btn-View
+{
+    height: 35px;
+    width: 80px;
+    background-color: rgb(18, 75, 40);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    border: none;
+    align-content: center;
+}
+
+.btn-Delete
+{
+    height: 35px;
+    width: 80px;
+    background-color: rgb(122, 36, 2);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    border: none;
+    align-content: center;
+}
+
+.btn-Delete:hover
+{
+    border-radius: 10px;
+    background-color: rgb(44, 4, 4);
+}
+
+.AP
+ {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-size: 17px;
+     font-style: bold;
+     text-align: right;
+ }
+
+ .profileMarks
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    
+}
+
+.profileMarks:hover
+{
+    height: 30px;
+    width: 200px;
+    background-color: burlywood;
+    color: black;
+    font-size: 25px;
+    text-align: center;
+   
+}
+
+.btnPost
+{
+    height: 40px;
+    width: 150px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btnPost:hover
+{
+    border-radius: 5px;
+    background-color: rgb(0, 0, 233);
+    color: white;
+    font-size: 16px;
+}
+
+/***************
+*****************
+**CHAT Designing*/
+
+.receiverTxt
+{
+    height: 35px;
+    width: 100%;
+    font-size: 14px;
+    border: 1px solid rgb(143, 182, 146);
+    cursor: text;
+    
+}
+.receiverTxt:hover
+{
+    border-color: green;
+}
+
+.msgBody
+{
+    height: 360px;
+    width: 100%;
+    font-size: 14px;
+    border: 1px solid rgb(143, 182, 146);
+    cursor: text;
+}
+
+.btnsend
+{
+    height: 35px;
+    width: 65px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    align-content: left;
+}
+.btnsend:hover
+{
+    cursor: pointer;
+    background-color: rgb(136, 156, 136);
+    color: black;
+    font-size: 18px;
+    border-color: 1px solid green;
+}
+
+.frndList
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: black;
+    height: 35px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    transition: 0.5s;
+}
+
+.frndList:hover
+{
+    background-color: rgb(184, 229, 240);
+    font-size: 16px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% auto;
+    background-color: rgb(204, 216, 226);
+    
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 22px;
+    height: 600px;
+    text-align: center;
+    overflow: scroll;
+  }
+
+
+.date
+{
+    background-color: rgb(76, 24, 197);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-style: bold;
+}
+
+/*
+************Delete Message Design
+*/
+
+.msgDelete
+{
+    height: 50px;
+    width: 60%;
+    background-color: rgb(110, 31, 31);
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+    font-style: bold;
+    cursor: pointer;
+}
+
+.backButton
+{
+    height: 50px;
+    width: 120px;
+    background-color: darkcyan;
+    color: white;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+.backButton:hover
+{
+    background-color: rgb(14, 56, 56);
+    border-radius: 5px;
+}
+
+/*
+*****************
+*****************
+*/
+
+#home_quicklinks {
+    padding: 20px 0;
+    text-align: center;
+}
+a.quicklink.link1 {
+    background: #fc6719;
+}
+a.quicklink {
+    display: inline-block;
+    width: 302px;
+    height: 173px;
+    position: relative;
+    margin: 90px 30px;
+}
+a.quicklink .ql_caption {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.outer {
+    display: table;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border-spacing: 0px;
+    padding: 0px;
+}
+.inner {
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border-spacing: 0px;
+    padding: 0px;
+}
+a.quicklink .ql_caption h2 {
+    margin: 0px;
+    padding: 0px;
+    text-transform: uppercase;
+    line-height: 1.46em;
+    color: #fff;
+}
+a.quicklink.link1 .ql_top {
+    border-bottom-color: #fc6719;
+}
+a.quicklink.link1 .ql_bottom {
+    border-top-color: #fc6719;
+}
+
+
+.ql_top {
+    bottom: 173px;
+    border-bottom: 89px solid #ccc;
+}
+.ql_bottom {
+    top: 173px;
+    border-top: 89px solid #ccc;
+}
+.ql_top, .ql_bottom {
+    position: absolute;
+    left: 0px;
+    width: 0px;
+    border-left: 151px solid transparent;
+    border-right: 151px solid transparent;
+}
+
+a.quicklink.link2 {
+    background: #fcf4e7;
+}
+a.quicklink.link2 .ql_top {
+    border-bottom-color: #fcf4e7;
+}
+a.quicklink.link2 .ql_bottom {
+    border-top-color: #fcf4e7;
+}
+
+
+a.quicklink.link3 .ql_top {
+    border-bottom-color: #bcbdc0;
+}
+a.quicklink.link3 .ql_bottom {
+    border-top-color: #bcbdc0;
+}
+a.quicklink.link3 {
+    background: #bcbdc0;
+}
+a.quicklink {
+    font-size: 36px;
+    font-weight: 500;
+    text-decoration:none;
+}
+.hexagon {
+  position: relative;
+  width: 300px; 
+  height: 173.21px;
+  margin: 86.60px 0;
+  background-image: url(http://csshexagon.com/img/meow.jpg);
+  background-size: auto 334.8632px;
+  background-position: center;
+  box-shadow: 0 0 20px rgba(0,128,192,0.6);
+  border-left: solid 5px #4a401c;
+  border-right: solid 5px #4a401c;
+}
+
+.hexTop,
+.hexBottom {
+  position: absolute;
+  z-index: 1;
+  width: 212.13px;
+  height: 212.13px;
+  overflow: hidden;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background: inherit;
+  left: 38.93px;
+  box-shadow: 0 0 20px rgba(0,128,192,0.6);
+}
+
+/*counter transform the bg image on the caps*/
+.hexTop:after,
+.hexBottom:after {
+  content: "";
+  position: absolute;
+  width: 290.0000px;
+  height: 167.4315780649915px;
+  -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-83.7158px);
+  -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-83.7158px);
+  transform:          rotate(45deg) scaleY(1.7321) translateY(-83.7158px);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  background: inherit;
+}
+
+.hexTop {
+  top: -106.0660px;
+  border-top: solid 7.0711px #4a401c;
+  border-right: solid 7.0711px #4a401c;
+}
+
+.hexTop:after {
+  background-position: center top;
+}
+
+.hexBottom {
+  bottom: -106.0660px;
+  border-bottom: solid 7.0711px #4a401c;
+  border-left: solid 7.0711px #4a401c;
+}
+
+.hexBottom:after {
+  background-position: center bottom;
+}
+
+.hexagon:after {
+  content: "";
+  position: absolute;
+  top: 2.8868px;
+  left: 0;
+  width: 290.0000px;
+  height: 167.4316px;
+  z-index: 2;
+  background: inherit;
+}
+
+
